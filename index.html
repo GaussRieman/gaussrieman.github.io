@@ -7,25 +7,46 @@
   <title>Frank Xiang｜AI 产品化专家</title>
   <style>
     :root {
-      --primary: #0d3b66;
-      --accent: #1a73e8;
-      --text: #2e3440;
-      --muted: #596070;
+      --primary: #0b2a45;
+      --accent: #e76a4a;
+      --text: #1f2732;
+      --muted: #5b6573;
       --surface: #ffffff;
-      --surface-alt: #f4f7fb;
-      --border: #dde3ed;
-      --shadow: 0 12px 32px rgba(13, 59, 102, 0.08);
+      --surface-alt: #f5f7fb;
+      --border: #d9e1ec;
+      --shadow: 0 18px 40px rgba(11, 42, 69, 0.12);
       --radius: 18px;
       --spacing: 18px;
     }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: "Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
       line-height: 1.6;
       color: var(--text);
-      background: linear-gradient(135deg, #ecf2ff 0%, #fdfcff 45%, #f6f9ff 100%);
+      background: radial-gradient(circle at top left, rgba(231, 106, 74, 0.12), transparent 55%),
+        radial-gradient(circle at 80% 10%, rgba(13, 59, 102, 0.14), transparent 45%),
+        linear-gradient(135deg, #f7f4ef 0%, #fdfcff 45%, #f4f8ff 100%);
       padding: clamp(24px, 4vw, 48px);
+      position: relative;
+      overflow-x: hidden;
     }
+
+    body::before,
+    body::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(13, 59, 102, 0.06);
+      filter: blur(6px);
+      z-index: 0;
+    }
+    body::before { top: -120px; right: -120px; }
+    body::after { bottom: -140px; left: -160px; }
+
     .page {
       max-width: 960px;
       margin: 0 auto;
@@ -33,25 +54,31 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: clamp(32px, 6vw, 56px);
-      border: 1px solid rgba(13, 59, 102, 0.05);
+      border: 1px solid rgba(13, 59, 102, 0.08);
+      position: relative;
+      z-index: 1;
     }
+
     header.masthead {
       display: flex;
       flex-direction: column;
       gap: 16px;
       border-bottom: 1px solid var(--border);
       padding-bottom: 24px;
-      margin-bottom: 32px;
+      margin-bottom: 18px;
     }
+
     .masthead h1 {
       font-size: clamp(30px, 4vw, 40px);
       font-weight: 700;
       color: var(--primary);
     }
+
     .headline {
       font-size: clamp(16px, 2vw, 19px);
       color: var(--muted);
     }
+
     .contact {
       list-style: none;
       display: flex;
@@ -65,39 +92,99 @@
       align-items: center;
       gap: 6px;
     }
+
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(26, 115, 232, 0.08);
-      color: var(--accent);
+      background: rgba(231, 106, 74, 0.12);
+      color: #b3472f;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.02em;
     }
+
+    /* NEW: Positioning block (above summary) */
+    .positioning {
+      background: linear-gradient(135deg, rgba(13, 59, 102, 0.06), rgba(231, 106, 74, 0.06));
+      border: 1px solid rgba(13, 59, 102, 0.10);
+      border-radius: calc(var(--radius) - 6px);
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      display: grid;
+      gap: 8px;
+    }
+    .position-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+    .position-core {
+      font-size: 16px;
+      color: var(--text);
+    }
+    .position-core strong { color: var(--primary); }
+    .position-proof {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .position-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2px;
+      font-size: 14px;
+    }
+    .position-links a {
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(13, 59, 102, 0.35);
+    }
+    .position-links a:hover { border-bottom-style: solid; }
+
     .summary {
       background: var(--surface-alt);
       border-radius: calc(var(--radius) - 6px);
       padding: 24px;
-      border: 1px solid rgba(26, 115, 232, 0.15);
+      border: 1px solid rgba(231, 106, 74, 0.18);
       margin-bottom: 32px;
     }
-    .summary p {
-      margin-bottom: 12px;
+    .summary p { margin-bottom: 12px; }
+    .summary ul { margin: 12px 0 0; padding-left: 20px; }
+    .summary li { margin-bottom: 8px; }
+    .summary-emphasis { font-weight: 600; color: var(--primary); }
+
+    .summary-metrics {
+      margin-top: 16px;
+      border-top: 1px dashed rgba(13, 59, 102, 0.2);
+      padding-top: 16px;
     }
-    .summary ul {
-      margin: 12px 0 0;
-      padding-left: 20px;
-    }
-    .summary li {
+    .summary-metrics h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
       margin-bottom: 8px;
     }
-    .summary-emphasis {
-      font-weight: 600;
-      color: var(--primary);
+    .summary-metrics ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+      font-size: 14px;
     }
+    .summary-metrics li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--text);
+    }
+    .summary-metrics span { color: var(--muted); }
+
     .client-grid {
       display: flex;
       flex-wrap: wrap;
@@ -111,9 +198,9 @@
       padding: 4px 10px;
       border-radius: 8px;
     }
-    .section {
-      margin-bottom: 36px;
-    }
+
+    .section { margin-bottom: 36px; }
+
     .section > header {
       display: flex;
       flex-wrap: wrap;
@@ -132,10 +219,9 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
-    .cards {
-      display: grid;
-      gap: 16px;
-    }
+
+    .cards { display: grid; gap: 16px; }
+
     article.card {
       border: 1px solid var(--border);
       border-radius: calc(var(--radius) - 10px);
@@ -144,6 +230,7 @@
       box-shadow: 0 8px 22px rgba(15, 32, 54, 0.05);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
+    article.card.compact { padding: 18px 20px; }
     article.card:hover {
       transform: translateY(-4px);
       box-shadow: 0 16px 40px rgba(15, 32, 54, 0.12);
@@ -154,41 +241,51 @@
       gap: 6px;
       margin-bottom: 12px;
     }
-    .card h3 {
-      font-size: 18px;
-      color: var(--primary);
+    .card h3 { font-size: 18px; color: var(--primary); }
+    .card small { font-size: 13px; color: var(--muted); }
+
+    /* NEW: project impact one-liner */
+    .project-impact {
+      font-size: 14px;
+      color: var(--text);
+      background: rgba(13, 59, 102, 0.06);
+      border: 1px solid rgba(13, 59, 102, 0.10);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-top: 6px;
+      line-height: 1.45;
     }
-    .card small {
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .card ul {
-      padding-left: 20px;
-      font-size: 15px;
-    }
-    .card li {
-      margin-bottom: 8px;
-    }
-    .experience-list {
-      display: grid;
-      gap: 16px;
-    }
+    .project-impact strong { color: var(--primary); }
+
+    .card ul { padding-left: 20px; font-size: 15px; }
+    .card li { margin-bottom: 8px; }
+
+    .experience-list { display: grid; gap: 16px; }
     .experience-list article {
       padding: 20px 24px;
       border-radius: calc(var(--radius) - 10px);
       border: 1px solid var(--border);
       background: var(--surface-alt);
     }
-    .experience-list ul {
-      padding-left: 20px;
-      margin-top: 8px;
+    .experience-list ul { padding-left: 20px; margin-top: 8px; }
+    .experience-list ul li { margin-bottom: 8px; }
+    .experience-list strong { color: var(--primary); }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 13px;
     }
-    .experience-list ul li {
-      margin-bottom: 8px;
-    }
-    .experience-list strong {
+    .pill-list span {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(13, 59, 102, 0.08);
       color: var(--primary);
+      font-weight: 600;
     }
+
     .education-list,
     .honor-list {
       list-style: none;
@@ -197,25 +294,23 @@
       gap: 12px;
       font-size: 15px;
     }
-    .education-list strong {
-      color: var(--primary);
-    }
-    .honor-list li {
-      padding-left: 18px;
-      position: relative;
-    }
+    .education-list strong { color: var(--primary); }
+
+    .honor-list li { padding-left: 18px; position: relative; }
     .honor-list li::before {
       content: "•";
       position: absolute;
       left: 0;
       color: var(--accent);
     }
+
     .footer-note {
       margin-top: 40px;
       font-size: 13px;
       color: var(--muted);
       text-align: right;
     }
+
     .visually-hidden {
       position: absolute !important;
       width: 1px !important;
@@ -227,6 +322,7 @@
       white-space: nowrap !important;
       border: 0 !important;
     }
+
     @media (min-width: 720px) {
       header.masthead {
         flex-direction: row;
@@ -239,49 +335,46 @@
         gap: 24px;
         align-items: start;
       }
-      .summary ul {
-        margin: 0;
-      }
+      .summary ul { margin: 0; }
+
       .cards,
-      .experience-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .experience-list article {
-        background: var(--surface);
-      }
+      .experience-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .experience-list article { background: var(--surface); }
     }
+
     @media (max-width: 540px) {
-      body {
-        padding: 16px;
-      }
-      .page {
-        padding: 24px;
-      }
-      .contact {
-        flex-direction: column;
-        gap: 8px;
-      }
-      .summary {
-        padding: 20px;
-      }
+      body { padding: 16px; }
+      .page { padding: 24px; }
+      .contact { flex-direction: column; gap: 8px; }
+      .summary { padding: 20px; }
+      .positioning { padding: 16px 16px; }
     }
+
     @media print {
-      body {
-        background: #ffffff;
-        padding: 0;
-      }
-      .page {
-        box-shadow: none;
-        border: none;
-        padding: 24px 32px;
-      }
-      article.card:hover {
-        transform: none;
-        box-shadow: none;
-      }
+      body { background: #ffffff; padding: 0; }
+      .page { box-shadow: none; border: none; padding: 24px 32px; }
+      article.card:hover { transform: none; box-shadow: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+
+    .page > * { animation: riseIn 0.7s ease both; }
+    .page > *:nth-child(1) { animation-delay: 0.05s; }
+    .page > *:nth-child(2) { animation-delay: 0.12s; }
+    .page > *:nth-child(3) { animation-delay: 0.18s; }
+    .page > *:nth-child(4) { animation-delay: 0.24s; }
+    .page > *:nth-child(5) { animation-delay: 0.3s; }
+    .page > *:nth-child(6) { animation-delay: 0.36s; }
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <header class="masthead">
@@ -297,17 +390,41 @@
       </ul>
     </header>
 
+    <!-- NEW: Positioning Block -->
+    <section class="positioning" aria-label="核心定位">
+      <p class="position-title">AI Director / Principal Architect</p>
+      <p class="position-core">
+        专注将 CV / 多模态 / LLM Agent 转化为
+        <strong>可规模化交付、可衡量产出、可持续迭代</strong>的行业级 AI 系统。
+      </p>
+      <p class="position-proof">
+        50+ 高复杂度项目｜10+ 国家/地区落地｜10万+ SKU｜2000万+ 样本｜单客户年收入 4000万+
+      </p>
+      <div class="position-links" aria-label="链接">
+        <!-- 按需替换为你的真实链接 -->
+        <a href="#" aria-label="Download PDF">下载 PDF（可选）</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn（可选）</a>
+        <a href="#" aria-label="GitHub">GitHub（可选）</a>
+      </div>
+    </section>
+
     <section class="summary" aria-labelledby="summary-heading">
       <div>
         <h2 id="summary-heading" class="visually-hidden">职业摘要</h2>
-        <p>10年深耕计算机视觉、大模型、智能硬件与AR，专注以<span class="summary-emphasis">数据+AI重构工业与快消行业的决策与执行闭环</span>。</p>
+
+        <!-- Re-ordered to be value-first -->
+        <p>
+          我帮助企业把 AI 从“概念验证”推进到“稳定产生业务结果”的生产系统，尤其擅长以
+          <span class="summary-emphasis">数据+AI重构工业与快消行业的决策与执行闭环</span>。
+        </p>
         <ul>
-          <li>主导零售AI执行与数据洞察、风电智能巡检、全栈AR引擎、公安执法Agent等标志性项目，实现全球化规模落地；</li>
-          <li>从0构建AI中台、工业智能体、AR引擎等可复用技术产品，支撑50+高复杂度项目在欧美、东南亚及中国交付，年创收超1.5亿元；</li>
-          <li>直接领导中美算法与工程团队，联动产品、交付、销售部门，获“上海市五一劳动奖章”等荣誉，团队获“上海市工人先锋号”。</li>
+          <li>主导零售AI执行与数据洞察、风电智能巡检、全栈AR引擎、公安执法Agent等标志性项目，覆盖欧美、东南亚与中国市场；</li>
+          <li>从0构建AI中台、工业智能体、AR引擎等可复用能力，支撑50+高复杂度项目交付，年技术贡献营收超1.5亿元；</li>
+          <li>直接领导跨中美算法与工程团队，协同产品、交付、销售推进规模化落地，具备GDPR/数据治理等合规推进经验。</li>
         </ul>
         <p>坚持AI的商业本质：以可复制的产品、可衡量的业务影响与可持续的行业变革为核心目标。</p>
       </div>
+
       <div>
         <h3 class="section-subtitle">代表客户</h3>
         <div class="client-grid">
@@ -323,6 +440,79 @@
           <span>Nordex</span>
           <span>中国华能</span>
         </div>
+
+        <div class="summary-metrics">
+          <h3>关键指标</h3>
+          <ul>
+            <li>全球落地<span>10+国家/地区</span></li>
+            <li>AI项目交付<span>50+高复杂度</span></li>
+            <li>数据规模<span>2000万+样本</span></li>
+            <li>模型覆盖<span>10万+SKU</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="capability-heading">
+      <header>
+        <h2 id="capability-heading">核心能力</h2>
+        <span class="section-subtitle">Capabilities</span>
+      </header>
+
+      <div class="cards">
+        <article class="card compact">
+          <header>
+            <h3>产品化与商业增长</h3>
+            <small>Strategy × GTM × Scale</small>
+          </header>
+          <ul>
+            <li>从0到1定义场景价值与商业模型，打造可复制的行业解决方案。</li>
+            <li>构建端到端交付与运营闭环，驱动NDR、续费与全球化扩张。</li>
+            <li>跨区域客户沟通与合规推进（GDPR/数据治理）。</li>
+          </ul>
+        </article>
+
+        <article class="card compact">
+          <header>
+            <h3>AI工程与平台化</h3>
+            <small>Data Flywheel × MLOps × Edge</small>
+          </header>
+          <ul>
+            <li>搭建数据闭环与模型生命周期管理平台，支撑多云与私有化部署。</li>
+            <li>多模态感知、实时推理与端侧性能优化，保障稳定交付体验。</li>
+            <li>组织算法、工程与产品团队协作，实现规模化研发效能。</li>
+          </ul>
+        </article>
+
+        <!-- NEW: Complex org / system capability -->
+        <article class="card compact">
+          <header>
+            <h3>复杂系统与组织协同</h3>
+            <small>Complex Delivery × Governance × Reliability</small>
+          </header>
+          <ul>
+            <li>在多角色、多团队、多地域场景下推进 AI 系统从设计到稳定交付。</li>
+            <li>将可解释、可审计、可干预纳入体系设计，降低高监管行业落地风险。</li>
+            <li>以“可衡量结果”为牵引，统一产品/算法/工程/交付的目标与节奏。</li>
+          </ul>
+        </article>
+
+        <article class="card compact">
+          <header>
+            <h3>技术栈与方法</h3>
+            <small>Tech Toolbox</small>
+          </header>
+          <div class="pill-list">
+            <span>CV/多模态</span>
+            <span>LLM Agent</span>
+            <span>SLAM/6DoF</span>
+            <span>Edge AI</span>
+            <span>MLOps</span>
+            <span>WebAR/3D</span>
+            <span>数据治理</span>
+            <span>多云部署</span>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -331,18 +521,24 @@
         <h2 id="projects-heading">战略级项目</h2>
         <span class="section-subtitle">Selected Programs</span>
       </header>
+
       <div class="cards">
         <article class="card">
           <header>
             <h3>零售AI执行和数据洞察方案</h3>
             <small>AI负责人｜2022–2025</small>
+            <div class="project-impact">
+              <strong>商业结果：</strong>单客户年收入 4000万+、NDR 130%｜
+              <strong>技术难点：</strong>反作弊 + 规模化细粒度识别｜
+              <strong>规模：</strong>10万+ SKU、2000万+ 样本、10+ 国家/地区
+            </div>
           </header>
           <ul>
-            <li>实线管理10+算法、工程与数据成员，协同产品、销售与交付团队统筹全球项目与技术路线；</li>
-            <li>构建图像采集→多视角视频拼接→细粒度识别→图像反作弊→KPI生成→任务下发的端到端智能执行系统，支持Web、移动端与边缘设备；</li>
-            <li>打造图像采集-主动学习-标注平台-模型训练-评估-运维的全链路数据飞轮，基于腾讯云、阿里云、Azure、Google Cloud 为30+客户提供实时IR能力；</li>
+            <li>直线管理10+算法/工程/数据团队，协同产品、销售与交付统筹全球项目与技术路线；</li>
+            <li>构建图像采集→多视角拼接→细粒度识别→反作弊→KPI生成→任务下发的端到端智能执行系统，支持Web、移动端与边缘设备；</li>
+            <li>搭建采集-主动学习-标注-训练-评估-运维的全链路数据飞轮，基于腾讯云、阿里云、Azure、Google Cloud 为30+客户提供实时IR能力；</li>
             <li>自研采集流程与反作弊引擎，降低40%数据采集成本，支撑10万+SKU、2000万训练数据，数据真实性达99.5%+；</li>
-            <li>方案被美国宝洁采纳为全球门店数据标准，单客户年收入超4000万元，NDR 130%，复制至美、加、巴、泰、越、柬、日、欧等市场。</li>
+            <li>方案被美国宝洁采纳为全球门店数据标准，复制至美、加、巴、泰、越、柬、日、欧等市场。</li>
           </ul>
         </article>
 
@@ -350,13 +546,18 @@
           <header>
             <h3>风电智能巡检系统</h3>
             <small>AI负责人｜2022–2025</small>
+            <div class="project-impact">
+              <strong>商业结果：</strong>替代 80% 人工巡检、单人单天 20 架次｜
+              <strong>技术难点：</strong>非平面稀疏重建与拼接、曲面畸变修正｜
+              <strong>质量：</strong>100% 召回、&lt;2% 误报
+            </div>
           </header>
           <ul>
             <li>带领跨中美两地10+人团队（嵌入式、算法、控制、数据）负责系统设计与导航控制模块，推进海外客户技术对接与GDPR合规；</li>
             <li>构建“无人机/无人小车自主导航与控制 + 工业相机控制 + CV缺陷检测 + 人机协同复核”四位一体系统；</li>
             <li>自研非平面结构稀疏重建与拼接算法，解决曲面几何畸变，实现100%缺陷召回率与&lt;2%误报率；</li>
             <li>实现单人单天巡检20架次、240+路径，替代80%人工巡检；</li>
-            <li>国内首个通过西门子Gamesa、GE Renewable、Vattenfall验收的中国AI系统，落地德国、澳大利亚、越南，推动风电行业数字化转型。</li>
+            <li>国内首个通过西门子Gamesa、GE Renewable、Vattenfall验收的中国AI系统，落地德国、澳大利亚、越南。</li>
           </ul>
         </article>
 
@@ -364,13 +565,18 @@
           <header>
             <h3>全栈AR引擎与 WebAR 商业化</h3>
             <small>AI 技术负责人｜2018–2022</small>
+            <div class="project-impact">
+              <strong>商业结果：</strong>20+ 商业项目落地、AR 眼镜深度交付｜
+              <strong>技术难点：</strong>端侧性能优化（量化/SIMD/多线程）｜
+              <strong>体验指标：</strong>中低端设备稳定 30 FPS
+            </div>
           </header>
           <ul>
             <li>作为Tech Lead虚线带领约10人算法、引擎、前端团队，协调外部创意与内容合作伙伴推动商业化落地；</li>
             <li>构建覆盖iOS、Android、AR眼镜、Web/小程序的全栈AR引擎，集成3D渲染、多模态感知（SLAM/6DoF/手势）、内容分发三大模块；</li>
             <li>自研端侧AI性能优化方案（模型量化 + SIMD + 多线程），在中低端设备实现稳定30FPS；</li>
             <li>基于Three.js + TensorFlow.js打造轻量化WebAR SDK，攻克跨平台兼容性与加载速度瓶颈；</li>
-            <li>推动20+商业项目落地数字营销、文旅、工业场景，深度交付多款AR眼镜项目，解决低延迟、跟踪精度等体验难题。</li>
+            <li>推动数字营销、文旅、工业场景落地，解决低延迟、跟踪精度等体验难题。</li>
           </ul>
         </article>
 
@@ -378,6 +584,11 @@
           <header>
             <h3>公安执法办案 Agent 系统</h3>
             <small>技术总监｜2025–</small>
+            <div class="project-impact">
+              <strong>业务场景：</strong>固证/笔录/文书/审核全流程｜
+              <strong>技术架构：</strong>知识库 + 多 Agent 任务流 + 任务推荐｜
+              <strong>工程约束：</strong>私有化部署、可解释/可审计/可干预
+            </div>
           </header>
           <ul>
             <li>全面负责智能执法系统技术战略与部门管理，领导30+人算法、工程、产品、测试运维团队；</li>
@@ -395,6 +606,7 @@
         <h2 id="experience-heading">职业经历</h2>
         <span class="section-subtitle">Leadership &amp; Delivery</span>
       </header>
+
       <div class="experience-list">
         <article>
           <p><strong>上海扩博智能技术有限公司</strong>｜算法负责人（2022 – 至今）</p>
@@ -403,6 +615,7 @@
             <li>管理中美多地10+人算法团队，联动销售、产品、交付等10+部门。</li>
           </ul>
         </article>
+
         <article>
           <p><strong>网易 / 易现先进科技</strong>｜AR技术负责人（2018 – 2022）</p>
           <ul>
@@ -436,7 +649,7 @@
       </ul>
     </section>
 
-    <p class="footer-note">最后更新：2024</p>
+    <p class="footer-note">最后更新：2025.12</p>
   </div>
 </body>
 </html>
