@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Frank Xiang · AI 负责人 候选人，专注构建可盈利、可治理、可规模化的行业智能产品体系，年技术贡献营收超1.5亿元，服务宝洁、西门子、GE、公安等全球客户。"/>
-  <title>Frank Xiang｜AI 负责人</title> 
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Frank Xiang · 行业智能化负责人，聚焦AI 组织提效、AI 工作流、Token 效率工程、行业 AI 产品创新与复杂系统交付。" name="description"/>
+<title>Frank Xiang｜行业智能化负责人</title>
+<style>
     :root {
       --primary: #0b2a45;
       --accent: #e76a4a;
@@ -154,7 +155,8 @@
     }
     .summary p { margin-bottom: 12px; }
     .summary ul { margin: 12px 0 0; padding-left: 20px; }
-    .summary li { margin-bottom: 8px; }
+    .summary li { margin-bottom: 7px; }
+    .summary.tight ul { margin-top: 10px; }
     .summary-emphasis { font-weight: 600; color: var(--primary); }
 
     .summary-metrics {
@@ -226,6 +228,8 @@
       border-radius: calc(var(--radius) - 10px);
       padding: 20px 24px;
       background: var(--surface);
+      display: flex;
+      flex-direction: column;
       box-shadow: 0 8px 22px rgba(15, 32, 54, 0.05);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
@@ -251,11 +255,13 @@
       border-radius: 10px;
       padding: 10px 12px;
       margin-top: 6px;
+      min-height: 74px;
       line-height: 1.45;
     }
     .project-impact strong { color: var(--primary); }
 
     .card ul { padding-left: 20px; font-size: 15px; }
+    .card li { line-height: 1.52; }
     .card li { margin-bottom: 8px; }
 
     .experience-list { display: grid; gap: 16px; }
@@ -329,8 +335,8 @@
       }
       .summary {
         display: grid;
-        grid-template-columns: 2.2fr 1fr;
-        gap: 24px;
+        grid-template-columns: 1.55fr 1fr;
+        gap: 28px;
         align-items: start;
       }
       .summary ul { margin: 0; }
@@ -349,7 +355,65 @@
       .positioning { padding: 16px 16px; }
     }
 
-    @media print {
+    
+    /* V16: rebalance masthead layout */
+    header.masthead {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+      align-items: start;
+      column-gap: 36px;
+      row-gap: 12px;
+    }
+
+    .masthead h1 {
+      line-height: 1.08;
+      margin-top: 12px;
+      white-space: nowrap;
+      font-size: clamp(32px, 4.2vw, 46px);
+    }
+
+    .headline {
+      margin-top: 8px;
+      font-size: clamp(18px, 2.2vw, 24px);
+      line-height: 1.35;
+      max-width: 720px;
+    }
+
+    .badge {
+      white-space: nowrap;
+      width: fit-content;
+      max-width: 100%;
+      font-size: 15px;
+    }
+
+    .contact {
+      justify-content: flex-end;
+      align-content: flex-start;
+      gap: 10px 22px;
+      font-size: clamp(16px, 1.8vw, 20px);
+      padding-top: 8px;
+    }
+
+    @media (max-width: 900px) {
+      header.masthead {
+        grid-template-columns: 1fr;
+      }
+      .contact {
+        justify-content: flex-start;
+        font-size: 15px;
+        padding-top: 0;
+      }
+      .masthead h1 {
+        white-space: normal;
+      }
+    }
+
+
+    .header-links {
+      grid-column: 1 / -1;
+      margin-top: -4px;
+    }
+@media print {
       body { background: #ffffff; padding: 0; }
       .page { box-shadow: none; border: none; padding: 24px 32px; }
       article.card:hover { transform: none; box-shadow: none; }
@@ -372,291 +436,160 @@
     }
   </style>
 </head>
-
 <body>
-  <div class="page">
-    <header class="masthead">
-      <div>
-        <span class="badge">AI 负责人 · 2B/2G/出海</span>
-        <h1>向亚运 | Frank Xiang</h1>
-        <p class="headline">构建可盈利、可治理、可规模化的行业智能产品体系</p>
-      </div>
-      <ul class="contact" aria-label="联系信息">
-        <li>📞 +86 18158524056</li>
-        <li>📧 gaussrieman@163.com</li>
-        <li>📍 杭州, 中国</li>
-      </ul>
-    </header>
+<div class="page">
+<header class="masthead">
+<div>
 
-    <section class="section" aria-labelledby="education-heading">
+<h1>向亚运 | Frank Xiang</h1>
+<p class="headline">AI 组织提效｜AI 产品落地</p>
+</div>
+<ul aria-label="联系信息" class="contact">
+<li>📞 +86 18158524056</li>
+<li>📧 gaussrieman@163.com</li>
+
+</ul>
+</header>
+<section aria-labelledby="education-heading" class="section">
+<header>
+<h2 id="education-heading">教育背景</h2>
+<span class="section-subtitle">Academic Foundation</span>
+</header>
+<ul class="education-list">
+<li><strong>西安交通大学</strong>｜数学 | 硕士（2012–2015）</li>
+<li><strong>西安交通大学</strong>｜数学 | 学士（2008–2012）</li>
+</ul>
+</section>
+<section class="section" aria-labelledby="summary-heading">
       <header>
-        <h2 id="education-heading">教育背景</h2>
-        <span class="section-subtitle">Academic Foundation</span>
+        <h2 id="summary-heading">职业摘要</h2>
+        <span class="section-subtitle">Positioning</span>
       </header>
-      <ul class="education-list">
-        <li><strong>西安交通大学</strong>｜数学 | 硕士（2012–2015）</li>
-        <li><strong>西安交通大学</strong>｜数学 | 学士（2008–2012）</li>
-      </ul>
-    </section>
-
-    <section class="positioning" aria-label="核心定位">
-      <p class="position-title">简介</p>
-      <p class="position-core">
-        专注将大模型、Agent 与多模态技术转化为<strong>可盈利、可治理、可规模化的行业产品</strong>，年技术贡献营收超 1.5 亿元。
-      </p>
-      <p class="position-proof">
-        3+ 行业范式｜50+ 项目｜10+ 国家｜宝洁/西门子/GE/公安客户背书
-      </p>
-      <div class="position-links" aria-label="链接">
-        <a href="https://blog.csdn.net/gaussrieman123" aria-label="CSDN">技术博客</a>
-        <a href="https://www.linkedin.com/in/frank-xiang-855951155/" aria-label="LinkedIn">LinkedIn</a>
-        <a href="https://mp.weixin.qq.com/s/asV1LgGmcDgB9U3yTD19Eg" aria-label="微信公众号">微信公众号</a>
-      </div>
-    </section>
-
-    <section class="summary" aria-labelledby="summary-heading">
-      <div>
-        <h2 id="summary-heading" class="section-subtitle">职业摘要</h2>
-        <p>
-          我专注于<strong>用技术驱动可衡量的商业结果</strong>，在零售、风电、公安等高价值场景中，构建从 PoC 到规模化营收的完整 AI 产品闭环。
+      <div class="summary tight">
+<div>
+<p>
+          10年+ AI 与复杂行业系统落地经验，长期处在 AI 技术与行业业务结合的一线。先后覆盖零售门店执行、风电智能巡检、公安执法办案等复杂场景，推动 AI 从算法模型、数据闭环和工程能力，升级为组织效率工具与行业产品能力。
         </p>
-        <ul>
-          <li><strong>证明 AI 可盈利</strong>：主导技术方案年贡献营收 1.5 亿元+，单客户年收入 4000 万+，NDR 130%；</li>
-          <li><strong>定义可复制产品范式</strong>：视频原生采集（宝洁全球标准）、无人化风电巡检（西门子/GE 验收）、可治理执法 Agent（公安多省市落地）；</li>
-          <li><strong>构建可治理技术体系</strong>：在 2B/2G/出海多场景中，平衡 AI 创新与合规、泛化与确定性；</li>
-          <li><strong>打造高绩效技术组织</strong>：带领团队连续两年绩效 Top 1，获“上海市工人先锋号”等荣誉。</li>
-        </ul>
-        <p>坚信：**技术的价值 = 商业结果 × 可复制性 × 可持续性**。</p>
-      </div>
+<ul>
+<li><strong>AI 组织提效</strong>：建设企业 AI 工作流与 Token 效率工程，覆盖需求、原型、研发、测试、交付全过程，沉淀模型接入、Gateway、Token 分析、Harness / Agent 框架、缓存、Memory 与上下文管理能力；</li>
+<li><strong>AI 产品落地</strong>：面向零售门店执行、风电智能巡检、公安执法办案等场景，整合业务规则、数据闭环、多模态 / LLM 算法与工程平台，形成可试用、可交付、可复制的行业产品方案；</li>
+<li><strong>全链路统筹</strong>：贯通产品定义、技术架构、数据治理、训练评估、推理部署、软硬一体、私有化 / 国产化适配与跨职能团队执行；</li>
+<li><strong>结果验证</strong>：支撑单客户年收入 4000 万+、NDR 130%、10万+ SKU、50+ 项目 / 场景、10+ 国家 / 地区交付，并管理 30+ 人跨职能团队。</li>
+</ul>
 
-      <div>
-        <h3 class="section-subtitle">代表客户</h3>
-        <div class="client-grid">
-          <span>宝洁 (P&amp;G)</span>
-          <span>可口可乐</span>
-          <span>玛氏</span>
-          <span>三得利</span>
-          <span>中国金风</span>
-          <span>强生 (J&amp;J)</span>
-          <span>西门子Gamesa</span>
-          <span>GE Renewable</span>
-        </div>
 
-        <div class="summary-metrics">
-          <h3>商业指标</h3>
-          <ul>
-            <li>年技术营收<span>1.5亿+</span></li>
-            <li>单客户年收入<span>4000万+</span></li>
-            <li>项目交付<span>50+</span></li>
-            <li>NDR<span>130%</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" aria-labelledby="capability-heading">
-      <header>
-        <h2 id="capability-heading">核心能力</h2>
-        <span class="section-subtitle">Core Competencies</span>
-      </header>
-
-      <div class="cards">
-        <article class="card compact">
-          <header>
-            <h3>AI 产品化与商业增长</h3>
-            <small>Productization × Revenue</small>
-          </header>
-          <ul>
-            <li>将 CV、LLM、Agent 转化为可定价、可订阅、可复制的产品，而非项目交付；</li>
-            <li>设计技术方案的商业模型（按 SKU、按架次、按任务），驱动 NDR 与全球化扩张；</li>
-            <li>深度协同销售与售前，主导千万级技术方案讲解与 PoC 演示。</li>
-          </ul>
-        </article>
-
-        <article class="card compact">
-          <header>
-            <h3>可治理智能体工程</h3>
-            <small>Governable Agent × Multi-Paradigm</small>
-          </header>
-          <ul>
-            <li>主导构建支持 LLM、RAG 与 Multi-Agent 的工程平台，实现 Qwen/DeepSeek 异构部署；</li>
-            <li>设计“数据驱动 + 行业规则”混合架构，在 2B/2G/出海场景中确保确定性与合规性；</li>
-            <li>打造适配国内与海外的双轨部署体系，支撑 10+ 国家落地。</li>
-          </ul>
-        </article>
-
-        <article class="card compact">
-          <header>
-            <h3>技术组织与协同</h3>
-            <small>Team × Alignment</small>
-          </header>
-          <ul>
-            <li>管理 30+ 人跨职能团队，以“可衡量结果”统一算法、工程、产品、交付目标；</li>
-            <li>构建高绩效技术文化，团队连续两年绩效 Top 1，全员 A（前20%）；</li>
-            <li>高效协同CXO、销售、交付，确保技术深度嵌入业务价值链。</li>
-          </ul>
-        </article>
-
-        <article class="card compact">
-          <header>
-            <h3>技术判断与风险控制</h3>
-            <small>Strategy × Governance</small>
-          </header>
-          <ul>
-            <li>在 LLM 热潮中坚持“可治理性”优先，避免纯聊天机器人陷阱；</li>
-            <li>将可解释、可干预、可审计纳入系统设计，降低高监管场景落地风险；</li>
-            <li>平衡创新与成本，通过平台化降低训练/标注成本 30–90%。</li>
-          </ul>
-        </article>
+</div>
+<div>
+<h3 class="section-subtitle">代表客户 / 场景</h3>
+<div class="client-grid">
+<span>美国宝洁</span>
+<span>中国宝洁</span>
+<span>沃尔玛</span>
+<span>可口可乐</span>
+<span>强生</span>
+<span>DoorDash</span>
+<span>西门子 Gamesa</span>
+<span>GE Renewable</span>
+<span>中国金风</span>
+<span>华能集团</span>
+<span>三峡新能源</span>
+<span>浙江省厅</span>
+<span>陕西省厅</span>
+<span>北京市局</span>
+<span>公安执法办案</span>
+<span>零售门店执行</span>
+<span>风电智能巡检</span>
+</div>
+<div class="summary-metrics">
+<h3>关键指标</h3>
+<ul>
+<li>单客户年收入<span>4000万+</span></li>
+<li>项目/场景交付<span>50+</span></li>
+<li>NDR<span>130%</span></li>
+<li>管理团队<span>30+人</span></li>
+</ul>
+</div>
+</div>
       </div>
     </section>
-
-    <section class="section" aria-labelledby="experience-heading">
-      <header>
-        <h2 id="experience-heading">职业经历</h2>
-        <span class="section-subtitle">Leadership &amp; Delivery</span>
-      </header>
-
-      <div class="experience-list">
-        <article>
-          <p><strong>杭州威灿科技有限公司</strong>｜数字警察事业部副总监（2025.06 – 至今）</p>
-          <ul>
-            <li><strong>深度参与公司级“数字警察”产品定义</strong>，主导执法办案、电子卷宗、文书管理、涉案财物、现场固证五大核心场景的技术架构设计；</li>
-            <li><strong>定义多模态智能体技术路径</strong>，融合视觉、语音、LLM 与 RAG，构建可解释、可干预、可审计的 AI 辅助体系；</li>
-            <li>管理 30+ 人算法、工程、产品、测试团队，协同副总裁确保技术深度嵌入业务价值链；</li>
-            <li>推动产品从“功能交付”转向“智能体产品化”，设计任务推荐与人工协同机制，提升民警使用效率。</li>
-          </ul>
-        </article>
-
-        <article>
-          <p><strong>上海扩博智能技术有限公司</strong>｜算法负责人（2022.02 – 2025.06）</p>
-          <ul>
-            <li><strong>定义“视频原生 AI 采集”产品范式</strong>，被宝洁采纳为全球门店数据标准，支撑 10万+ SKU、99.5%+ 数据真实性；</li>
-            <li><strong>定义风电智能巡检产品架构</strong>，成为国内首个通过西门子 Gamesa 与 GE Renewable 验收的中国 AI 系统；</li>
-            <li>主导构建 RAG + Multi-Agent 企业知识自动化平台，支持Qwen、DeepSeek 异构部署；</li>
-            <li>带领团队连续两年绩效 Top 1，全员评级 A（前20%），获“上海市工人先锋号”“五四青年集体”等荣誉。</li>
-          </ul>
-        </article>
-
-        <article>
-          <p><strong>网易 / 易现先进科技</strong>｜AR技术专家（2018 – 2022）</p>
-          <ul>
-            <li>从0构建全栈AR+AI引擎，主导WebAR与计算机视觉、SLAM等AI技术研发；</li>
-            <li>负责20+AR项目交付，涵盖零售、文旅、教育等领域。</li>
-          </ul>
-        </article>
-
-        <article>
-          <p><strong>中兴通讯 / 万像 </strong>｜算法工程师（2015 – 2018）</p>
-          <ul>
-            <li>使用NLP技术监控手机销量和用户反馈，及时发现问题并给高层反馈；</li>
-            <li>参与图像编解码算法的研究与优化，提升系统效率与质量。</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="projects-heading">
-      <header>
-        <h2 id="projects-heading">重点项目</h2>
-        <span class="section-subtitle">Selected Programs</span>
-      </header>
-
-      <div class="cards">
-        <article class="card">
-          <header>
-            <h3>公安执法办案 Agent 系统</h3>
-            <small>技术总监｜2025–</small>
-            <div class="project-impact">
-              <strong>业务场景：</strong>固证/笔录/文书/审核全流程｜
-              <strong>技术架构：</strong>知识库 + 多 Agent 任务流 + 任务推荐｜
-              <strong>工程约束：</strong>私有化部署、可解释/可审计/可干预
-            </div>
-          </header>
-          <ul>
-            <li>全面负责智能执法系统技术战略与部门管理，领导30+人算法、工程、产品、测试运维团队；</li>
-            <li>构建“执法知识库 + 多Agent任务流 + 任务推荐”架构，覆盖固证、笔录、文书、审核全流程；</li>
-            <li>自研垂直领域大模型微调与推理优化框架，支持Qwen、DeepSeek等国产模型在私有化环境高效部署；</li>
-            <li>设计任务推荐与人工审核协同机制，确保决策可解释、可干预并满足AI治理标准；</li>
-            <li>系统已在多个省市公安厅局单位落地，成为AI赋能社会治理与司法智能化的标杆案例。</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <header>
-            <h3>零售AI执行和数据洞察方案</h3>
-            <small>AI负责人｜2022–2025</small>
-            <div class="project-impact">
-              <strong>商业结果：</strong>单客户年收入 4000万+、NDR 130%｜
-              <strong>技术难点：</strong>反作弊 + 规模化细粒度识别｜
-              <strong>规模：</strong>10万+ SKU、2000万+ 样本、10+ 国家/地区
-            </div>
-          </header>
-          <ul>
-            <li>直线管理10+算法/工程/数据团队，协同产品、销售与交付统筹全球项目与技术路线；</li>
-            <li>构建图像采集→多视角拼接→细粒度识别→反作弊→KPI生成→任务下发的端到端智能执行系统，支持Web、移动端与边缘设备；</li>
-            <li>搭建采集-主动学习-标注-训练-评估-运维的全链路数据飞轮，基于腾讯云、阿里云、Azure、Google Cloud 为30+客户提供实时IR能力；</li>
-            <li>自研采集流程与反作弊引擎，降低40%数据采集成本，支撑10万+SKU、2000万训练数据，数据真实性达99.5%+；</li>
-            <li>方案被美国宝洁采纳为全球门店数据标准，复制至美、加、巴、泰、越、柬、日、欧等市场。</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <header>
-            <h3>风电智能巡检系统</h3>
-            <small>AI负责人｜2022–2025</small>
-            <div class="project-impact">
-              <strong>商业结果：</strong>替代 80% 人工巡检、单人单天 20 架次｜
-              <strong>技术难点：</strong>非平面稀疏重建与拼接、曲面畸变修正｜
-              <strong>质量：</strong>99% 召回、&lt;2% 误报
-            </div>
-          </header>
-          <ul>
-            <li>带领跨中美两地10+人团队（嵌入式、算法、控制、数据）负责系统设计与导航控制模块，推进海外客户技术对接与GDPR合规；</li>
-            <li>构建“无人机/无人小车自主导航与控制 + 工业相机控制 + CV缺陷检测 + 人机协同复核”四位一体系统；</li>
-            <li>自研非平面结构稀疏重建与拼接算法，解决曲面几何畸变，实现100%缺陷召回率与&lt;2%误报率；</li>
-            <li>实现单人单天巡检20架次、240+路径，替代80%人工巡检；</li>
-            <li>国内首个通过西门子Gamesa、GE Renewable、Vattenfall验收的中国AI系统，落地德国、澳大利亚、越南。</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <header>
-            <h3>全栈AR引擎与 WebAR 商业化</h3>
-            <small>AI 技术负责人｜2018–2022</small>
-            <div class="project-impact">
-              <strong>商业结果：</strong>20+ 商业项目落地、AR 眼镜深度交付｜
-              <strong>技术难点：</strong>端侧性能优化（量化/SIMD/多线程）｜
-              <strong>体验指标：</strong>中低端设备稳定 30 FPS
-            </div>
-          </header>
-          <ul>
-            <li>作为Tech Lead虚线带领约10人算法、引擎、前端团队，协调外部创意与内容合作伙伴推动商业化落地；</li>
-            <li>构建覆盖iOS、Android、AR眼镜、Web/小程序的全栈AR引擎，集成3D渲染、多模态感知（SLAM/6DoF/手势）、内容分发三大模块；</li>
-            <li>自研端侧AI性能优化方案（模型量化 + SIMD + 多线程），在中低端设备实现稳定30FPS；</li>
-            <li>基于Three.js + TensorFlow.js打造轻量化WebAR SDK，攻克跨平台兼容性与加载速度瓶颈；</li>
-            <li>推动数字营销、文旅、工业场景落地，解决低延迟、跟踪精度等体验难题。</li>
-          </ul>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="honor-heading">
-      <header>
-        <h2 id="honor-heading">知识产权与荣誉</h2>
-        <span class="section-subtitle">Recognition</span>
-      </header>
-      <ul class="honor-list">
-        <li>国家发明专利4项（图像处理、视频编码、缺陷检测）</li>
-        <li>2023 苏州市计算机学会科学技术奖二等奖</li>
-        <li>2024 “上海市工人先锋号”“五四青年集体”等荣誉</li>
-        <li>2024 上海市检验检测大赛三等奖(8/256)</li>
-      </ul>
-    </section>
-
-    <p class="footer-note">最后更新：2025.12</p>
-  </div>
+<section aria-labelledby="experience-heading" class="section">
+<header>
+<h2 id="experience-heading">职业经历</h2>
+<span class="section-subtitle">Leadership &amp; Delivery</span>
+</header>
+<div class="experience-list">
+<article><p><strong>杭州威灿科技有限公司</strong>｜数字警察事业部总监（2025.06 – 至今）</p><ul>
+<li><strong>AI 组织提效</strong>：负责数字警察事业部产品体系与 AI 能力平台，统筹产品规划、技术路线、研发组织、重点交付和客户反馈闭环；</li>
+<li>推进企业 AI 工作流与 Token 效率工程，将模型渠道、Gateway、Token 分析、Harness / Agent 框架、缓存、Memory、上下文管理接入产品、研发、测试、交付全过程；</li>
+<li><strong>AI 产品落地</strong>：横向支撑北京、陕西、浙江等省级平台项目，建设 LLM/VLM/ASR/TTS/Embedding、OCR、目标检测、智能检索等可复用 AI 能力；</li>
+<li><strong>AI 产品创新</strong>：“智能体办案系统”，将 Agent / Skill 嵌入智证、智教、智审、智谱、智核、智处等一线执法办案流程，已在杭州滨江试用验证。</li>
+</ul></article>
+<article><p><strong>上海扩博智能技术有限公司</strong>｜算法负责人（2022.02 – 2025.06）</p><ul><li>围绕零售与风电两条业务线推进 AI 产品落地，覆盖产品方案、算法架构、数据闭环、训练评估、推理部署与客户交付；</li><li>定义“视频原生 AI 采集”产品范式，被宝洁采纳为全球门店数据标准，支撑 10万+ SKU、2000万+ 样本、99.5%+ 数据真实性和单客户年收入 4000万+；</li><li>主导风电智能巡检产品架构，融合无人机/无人小车、工业相机、导航控制、缺陷检测、曲面拼接与人机复核，通过西门子 Gamesa、GE Renewable 等客户验收；</li><li>建设采集、主动学习、标注、训练、评估、运维的数据飞轮，并探索 RAG + Multi-Agent 在企业知识、交付运维和流程自动化中的产品化路径。</li></ul></article>
+<article><p><strong>网易 / 易现先进科技</strong>｜资深算法工程师（2018 – 2022）</p><ul><li>参与并主导 AR + AI 引擎能力建设，覆盖 WebAR、移动端 AR、AR 眼镜、SLAM/6DoF、手势识别与端侧推理；</li><li>基于 Three.js、TensorFlow.js、模型量化、SIMD、多线程等技术，优化跨平台兼容性、加载速度与实时性能；</li><li>推动 AR 能力从 Demo 走向数字营销、文旅、教育、工业等商业项目交付；</li><li>负责 20+ AR 项目算法与工程落地，积累底层算法、端侧优化与产品体验闭环经验。</li></ul></article>
+<article><p><strong>中兴通讯 / 万像</strong>｜高级算法工程师（2015 – 2018）</p><ul><li>从事 NLP、图像处理、视频编码等算法研发，覆盖文本分析、视觉算法与工程优化；</li><li>参与手机销量、用户反馈、质量问题监控与分析，形成面向业务决策的数据洞察；</li><li>参与图像编解码与视觉算法研究优化，关注算法效果、性能效率和工程稳定性；</li><li>完成从数学建模、算法研发到工程系统落地的早期能力积累。</li></ul></article>
+</div>
+</section>
+<section aria-labelledby="projects-heading" class="section">
+<header>
+<h2 id="projects-heading">重点项目</h2>
+<span class="section-subtitle">Selected Programs</span>
+</header>
+<div class="cards">
+<article class="card">
+<header>
+<h3>数字警察 AI 能力平台 / 智能体办案系统</h3>
+<small>事业部总监｜2025–</small>
+<div class="project-impact"><strong>业务定位：</strong>AI 组织提效 + AI 产品落地｜
+              <strong>进展：</strong>北京/陕西/浙江项目支撑，杭州滨江试用验证｜
+              <strong>工程底座：</strong>Gateway / Harness / Agent Runtime / Token 分析</div>
+</header>
+<ul>
+<li><strong>AI 组织提效</strong>：建设企业级 AI 应用闭环，将模型渠道接入、Gateway、Token 分析、Harness / Agent 框架、缓存、Memory、上下文管理沉淀为产研测交付效率工具；</li>
+<li><strong>AI 产品落地</strong>：面向省级平台和一线办案场景，规划智能体办案系统，将固证、教育、笔录、图谱、审核、处罚抽象为可编排 Agent / Skill；</li>
+<li>统一 Channel 接入、会话管理、路由分发、权限控制、观测审计、Tool Calling、Trace、Human-in-loop、Guardrail，保证系统可控、可审计、可迭代；</li>
+<li>整合 Qwen/DeepSeek、Qwen-VL、FunASR、Qwen-TTS、Embedding、OCR、目标检测、智能检索及 Redis、MongoDB、PostgreSQL、MinIO，支撑效果、成本与交付闭环。</li>
+</ul>
+</article>
+<article class="card">
+<header>
+<h3>零售 AI 执行与数据洞察方案</h3>
+<small>AI负责人｜2022–2025</small>
+<div class="project-impact"><strong>商业结果：</strong>单客户年收入 4000万+、NDR 130%｜<strong>技术难点：</strong>视频原生采集、反作弊、细粒度识别、全球化交付｜<strong>规模：</strong>10万+ SKU、2000万+ 样本、10+ 国家/地区</div>
+</header>
+<ul><li>负责全球零售 AI 项目的技术路线、数据体系、算法迭代、模型评估和交付质量，协同产品、销售、交付与海外团队；</li><li>构建采集、多视角拼接、细粒度 SKU 识别、反作弊、KPI 生成、任务下发的端到端智能执行系统，支持 Web、移动端与边缘设备；</li><li>搭建采集、主动学习、标注、训练、评估、运维的数据飞轮，基于腾讯云、阿里云、Azure、Google Cloud 为 30+ 客户提供实时 IR 能力；</li><li>方案被美国宝洁采纳为全球门店数据标准，复制至美国、加拿大、巴西、泰国、越南、柬埔寨、日本、欧洲等市场。</li></ul>
+</article>
+<article class="card">
+<header>
+<h3>风电智能巡检系统</h3>
+<small>AI负责人｜2022–2025</small>
+<div class="project-impact"><strong>商业结果：</strong>替代 80% 人工巡检、单人单天 20 架次｜<strong>技术难点：</strong>软硬一体、导航控制、曲面重建拼接、缺陷检测｜<strong>质量：</strong>99%+ 召回、&lt;2% 误报</div>
+</header>
+<ul><li>负责无人机/无人小车、工业相机、导航控制、数据采集、缺陷检测和人机复核的软硬一体系统设计与客户验收；</li><li>构建“自主导航与控制 + 工业相机控制 + CV 缺陷检测 + 人机协同复核”的产品架构，支撑自动化巡检流程；</li><li>自研非平面结构稀疏重建与拼接算法，处理叶片曲面几何畸变与图像对齐问题，实现高召回、低误报的缺陷识别；</li><li>通过西门子 Gamesa、GE Renewable、Vattenfall 等客户验收，落地德国、澳大利亚、越南等市场。</li></ul>
+</article>
+<article class="card">
+<header>
+<h3>全栈 AR 引擎与 WebAR 商业化</h3>
+<small>资深算法工程师｜2018–2022</small>
+<div class="project-impact"><strong>商业结果：</strong>20+ 商业项目落地、AR 眼镜深度交付｜<strong>技术难点：</strong>SLAM / 6DoF / 手势识别 / 端侧性能优化｜<strong>体验指标：</strong>中低端设备稳定 30 FPS</div>
+</header>
+<ul><li>参与并主导 WebAR、移动端 AR、AR 眼镜等平台能力建设，覆盖 3D 渲染、SLAM/6DoF、多模态感知、手势交互与内容分发；</li><li>通过模型量化、SIMD、多线程等方式优化端侧 AI 性能，在中低端设备实现稳定 30 FPS；</li><li>基于 Three.js + TensorFlow.js 打造轻量化 WebAR SDK，解决跨平台兼容性、加载速度和低延迟体验问题；</li><li>推动数字营销、文旅、工业等场景落地，积累从底层算法、端侧优化到产品体验闭环的系统经验。</li></ul>
+</article>
+</div>
+</section>
+<section aria-labelledby="honor-heading" class="section">
+<header>
+<h2 id="honor-heading">知识产权与荣誉</h2>
+<span class="section-subtitle">Recognition</span>
+</header>
+<ul class="honor-list">
+<li>国家发明专利4项（图像处理、视频编码、缺陷检测）</li>
+<li>2023 苏州市计算机学会科学技术奖二等奖</li>
+<li>2024 “上海市工人先锋号”“五四青年集体”等荣誉</li>
+<li>2024 上海市检验检测大赛三等奖（8/256）</li>
+</ul>
+</section>
+<p class="footer-note">最后更新：2026.06</p>
+</div>
 </body>
 </html>
-
