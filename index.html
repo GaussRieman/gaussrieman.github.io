@@ -93,6 +93,17 @@
       gap: 6px;
     }
 
+    .name-block {
+      display: grid;
+      gap: 8px;
+    }
+    .headline-row {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -355,6 +366,26 @@
       font-size: 15px;
     }
     .education-list strong { color: var(--primary); }
+    .education-list {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      max-width: 620px;
+    }
+    .education-list li {
+      display: grid;
+      grid-template-columns: max-content max-content max-content max-content;
+      align-items: center;
+      column-gap: 28px;
+      padding: 6px 0;
+      border: 1px solid var(--border);
+      border-width: 0 0 1px;
+      border-radius: 0;
+      background: transparent;
+    }
+    .education-major,
+    .education-degree,
+    .education-time { color: var(--text); }
+    .education-time { text-align: right; color: var(--muted); }
 
     .honor-list li { padding-left: 18px; position: relative; }
     .honor-list li::before {
@@ -416,11 +447,7 @@
     
     /* V16: rebalance masthead layout */
     header.masthead {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
-      align-items: start;
-      column-gap: 36px;
-      row-gap: 12px;
+      display: block;
     }
 
     .masthead h1 {
@@ -449,7 +476,6 @@
       align-content: flex-start;
       gap: 10px 22px;
       font-size: clamp(16px, 1.8vw, 20px);
-      padding-top: 8px;
     }
 
     @media (max-width: 900px) {
@@ -459,7 +485,6 @@
       .contact {
         justify-content: flex-start;
         font-size: 15px;
-        padding-top: 0;
       }
       .masthead h1 {
         white-space: normal;
@@ -472,12 +497,66 @@
       margin-top: -4px;
     }
 @media print {
-      @page { size: A4; margin: 0; }
-      body { background: #ffffff; padding: 0; }
+      @page { size: A4; margin: 6mm 0 0; }
+      body {
+        background: #ffffff;
+        padding: 0;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
       body::before,
       body::after { display: none; }
-      .page { box-shadow: none; border: none; padding: 24px 32px; }
+      .page {
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        max-width: none;
+        padding: 14px 30px 22px;
+      }
       .page > * { animation: none !important; opacity: 1 !important; transform: none !important; }
+      header.masthead {
+        padding-bottom: 18px;
+        margin-bottom: 16px;
+      }
+      .masthead h1 { margin-top: 0; }
+      .headline-row { gap: 4px; }
+      .headline { margin-top: 0; }
+      .contact {
+        justify-content: flex-start;
+        white-space: nowrap;
+        font-size: 15px;
+      }
+      .education-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        max-width: 600px;
+      }
+      .education-list li {
+        grid-template-columns: max-content max-content max-content max-content;
+        column-gap: 28px;
+        padding: 5px 0;
+      }
+      .section { margin-bottom: 20px; }
+      .section > header,
+      .card header { break-after: avoid-page; page-break-after: avoid; }
+      .experience-list,
+      .cards {
+        align-items: start;
+        gap: 10px 12px;
+      }
+      .experience-list article,
+      article.card {
+        align-self: start;
+        padding: 16px 18px;
+      }
+      .project-impact { min-height: unset; padding: 8px 10px; }
+      .card ul,
+      .experience-list ul { font-size: 14px; }
+      .card li,
+      .experience-list ul li { margin-bottom: 6px; }
+      .card li,
+      .experience-list li,
+      .honor-list li { break-inside: avoid; page-break-inside: avoid; }
       .footer-note { display: none; }
       article.card:hover { transform: none; box-shadow: none; }
     }
@@ -503,14 +582,16 @@
 <body>
 <div class="page">
 <header class="masthead">
-<div>
+<div class="name-block">
 <h1>向亚运｜Frank Xiang</h1>
+<div class="headline-row">
 <p class="headline">行业智能化｜AI 产品落地｜AI 组织建设</p>
-</div>
 <ul aria-label="联系信息" class="contact">
 <li>📞 +86 18158524056</li>
 <li>📧 gaussrieman@163.com</li>
 </ul>
+</div>
+</div>
 </header>
 
 <section aria-labelledby="education-heading" class="section">
@@ -519,8 +600,8 @@
 <span class="section-subtitle">Academic Foundation</span>
 </header>
 <ul class="education-list">
-<li><strong>西安交通大学</strong>｜数学 | 硕士（2012–2015）</li>
-<li><strong>西安交通大学</strong>｜数学 | 学士（2008–2012）</li>
+<li><strong>西安交通大学</strong><span class="education-major">数学</span><span class="education-degree">硕士</span><span class="education-time">2012–2015</span></li>
+<li><strong>西安交通大学</strong><span class="education-major">数学</span><span class="education-degree">学士</span><span class="education-time">2008–2012</span></li>
 </ul>
 </section>
 
@@ -626,7 +707,7 @@
       <li><strong>场景与终端协同</strong>：面向公安执法办案和办案区场景，负责智能体办案系统与终端设备协同规划，连接警务通、AI 眼镜、智能头盔、采集一体机、智能案卷柜、数警教育终端、多维智审桌等设备形态；</li>
       <li><strong>办案流程抽象</strong>：面向省级平台和一线办案流程，将固证、教育、笔录、图谱、审核、处罚抽象为可配置、可编排、可复用的办案能力，便于新案由、新事件和新终端持续接入；</li>
       <li><strong>Agentic System 工程治理</strong>：建设模型接入、Agent 编排、上下文管理、Tool Calling、权限审计、人工复核、风险控制和成本观测机制，提升系统可控性、可审计性和持续迭代能力；</li>
-      <li><strong>效率与成本结果</strong>：2 个月完成智能体执法办案系统原型，将新增案由事件支持周期从 3 周降低至 1 周，并将产研人月均模型调用成本控制在 $150 内。</li>
+      <li><strong>效率与成本结果</strong>：2 个月完成智能体执法办案系统原型，新增案由支持周期从 3 周降低至 1 周，并将产研人月均模型调用成本控制在 $150 内。</li>
     </ul>
   </article>
   <article class="card">
