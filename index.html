@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Frank Xiang · 行业智能化负责人，聚焦 AI 组织建设、AI 工作流、Token 效率工程、行业 AI 产品落地与复杂系统交付。" name="description"/>
+<meta content="Frank Xiang · 行业智能化负责人，聚焦行业智能化、软硬件系统、AI 组织建设、AI 工程与复杂系统交付。" name="description"/>
 <title>Frank Xiang｜行业智能化负责人</title>
 <style>
     :root {
@@ -159,9 +159,9 @@
     .summary-emphasis { font-weight: 600; color: var(--primary); }
 
     .summary-metrics {
-      margin-top: 16px;
+      margin-top: 12px;
       border-top: 1px dashed rgba(13, 59, 102, 0.2);
-      padding-top: 16px;
+      padding-top: 12px;
     }
     .summary-metrics h3 {
       font-size: 13px;
@@ -174,16 +174,19 @@
       list-style: none;
       padding: 0;
       display: grid;
-      gap: 8px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 14px;
       font-size: 14px;
     }
     .summary-metrics li {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
+      display: grid;
+      gap: 2px;
       color: var(--text);
     }
-    .summary-metrics span { color: var(--muted); }
+    .summary-metrics span {
+      color: var(--primary);
+      font-weight: 700;
+    }
 
     .client-grid {
       display: flex;
@@ -197,6 +200,26 @@
       color: var(--primary);
       padding: 4px 10px;
       border-radius: 8px;
+    }
+
+    .client-groups {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .client-group {
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .client-group h4 {
+      display: inline;
+      font-size: 13px;
+      color: var(--primary);
+      margin-right: 6px;
+      font-weight: 700;
+    }
+    .client-list {
+      color: var(--muted);
     }
 
     .skills-grid {
@@ -482,7 +505,7 @@
 <header class="masthead">
 <div>
 <h1>向亚运｜Frank Xiang</h1>
-<p class="headline">AI 组织建设｜AI 产品落地｜行业智能化</p>
+<p class="headline">行业智能化｜AI 产品落地｜AI 组织建设</p>
 </div>
 <ul aria-label="联系信息" class="contact">
 <li>📞 +86 18158524056</li>
@@ -508,25 +531,35 @@
   </header>
   <div class="summary tight">
     <div>
-      <p>10年+ AI 与复杂行业系统落地经验，长期负责 AI 技术与行业业务结合的产品化与交付，具备国际化交付与跨区域团队协作经验。先后覆盖零售门店执行、风电智能巡检、公安执法办案等场景，将算法模型、业务数据与工程平台结合，形成面向组织协作和行业交付的产品能力。</p>
+      <p>10年+ AI 与复杂行业系统落地经验，长期围绕视觉、多模态、软硬件终端与 Agentic System 推进行业智能化产品落地。经历覆盖零售门店执行、风电智能巡检、公安执法办案等场景，重点在于把算法模型、数据采集、工程平台、业务流程和组织协作组合成可交付、可验证的行业系统。</p>
       <ul>
-        <li><strong>AI 组织建设</strong>：建设企业 AI 工作流与 Token 效率工程，覆盖模型接入、Gateway、Token 分析、Harness / Agent 框架、缓存、Memory 与上下文管理，使产研流程更易观测、复用和评估；</li>
-        <li><strong>AI 产品落地</strong>：在零售、风电、公安等场景中，将业务规则、业务数据、多模态算法、LLM / Agent 与工程平台组合为可试用、可交付的行业方案；</li>
-        <li><strong>跨职能交付</strong>：参与产品定义、技术架构、数据治理、训练评估、推理部署、软硬一体、私有化 / 国产化适配与团队执行；</li>
-        <li><strong>结果验证</strong>：参与交付单客户年收入 4000 万+、NDR 130%、10万+ SKU、50+ 项目 / 场景、10+ 国家 / 地区项目，并管理 30+ 人跨职能团队。</li>
+        <li><strong>行业 AI 产品落地</strong>：面向零售、风电、公安等场景，负责从需求澄清、方案设计、算法评估到系统交付和客户验证；</li>
+        <li><strong>Agentic System 与 AI 工程治理</strong>：建设 Gateway、Token 分析、Harness / Agent、Memory、Context Engineering、Trace 与成本控制体系；</li>
+        <li><strong>复杂组织与交付管理</strong>：参与交付单客户年收入 4000 万+、50+ 项目 / 场景、10+ 国家 / 地区项目，并管理 30+ 人跨职能团队。</li>
       </ul>
     </div>
     <div>
       <h3 class="section-subtitle">代表客户 / 场景</h3>
-      <div class="client-grid">
-        <span>美国宝洁</span><span>中国宝洁</span><span>Thainamtip</span><span>可口可乐</span><span>强生</span><span>DoorDash</span><span>西门子 Gamesa</span><span>GE Renewable</span><span>中国金风</span><span>华能集团</span><span>三峡新能源</span><span>浙江省厅</span><span>陕西省厅</span><span>北京市局</span><span>公安执法办案</span><span>零售门店执行</span><span>风电智能巡检</span>
+      <div class="client-groups">
+        <div class="client-group">
+          <h4>全球零售客户</h4>
+          <span class="client-list">美国宝洁、中国宝洁、可口可乐、强生、DoorDash、Thainamtip</span>
+        </div>
+        <div class="client-group">
+          <h4>能源与工业客户</h4>
+          <span class="client-list">西门子 Gamesa、GE Renewable、中国金风、华能集团、三峡新能源</span>
+        </div>
+        <div class="client-group">
+          <h4>政法公安场景</h4>
+          <span class="client-list">浙江省厅、陕西省厅、北京市局、省级公安平台、执法办案、办案区智能终端</span>
+        </div>
       </div>
       <div class="summary-metrics">
         <h3>关键指标</h3>
         <ul>
           <li>单客户年收入<span>4000万+</span></li>
           <li>项目/场景交付<span>50+</span></li>
-          <li>NDR<span>130%</span></li>
+          <li>全球市场覆盖<span>10+国家/地区</span></li>
           <li>管理团队<span>30+人</span></li>
         </ul>
       </div>
@@ -543,28 +576,26 @@
   <article>
     <p><strong>杭州威灿科技有限公司</strong>｜数字警察事业部总监（2025.06 – 至今）</p>
     <ul>
-      <li><strong>组织与业务统筹</strong>：负责数字警察事业部产品体系、AI 能力平台和重点项目交付，统筹产品规划、技术路线、研发组织与客户反馈机制；</li>
-      <li><strong>AI 组织建设</strong>：依托 Gateway 与 Token 效率工程，2 个月完成智能体执法办案系统原型，新增案由事件支持周期从 3 周降低为 1 周，产研人月均 Token 成本控制在 <strong>$150</strong> 内；</li>
-      <li><strong>AI 能力平台</strong>：面向北京、陕西、浙江等省级平台项目，建设 LLM/VLM/ASR/TTS/Embedding、OCR、目标检测、智能检索等复用能力；</li>
-      <li><strong>智能体办案系统</strong>：将 Agent / Skill 嵌入智证、智教、智审、智谱、智核、智处等一线执法办案流程，并在杭州滨江完成试用验证。</li>
+      <li><strong>组织与业务统筹</strong>：负责数字警察事业部产品体系、AI 能力平台、智能体办案系统与办案区智能终端规划，统筹产品路线、技术路线、研发组织与客户反馈机制；</li>
+      <li><strong>AI 组织建设</strong>：建设 Gateway、Token 分析、Agent 工程底座和 AI 研发治理机制，2 个月完成智能体执法办案系统原型，新增案由事件支持周期从 3 周缩短至 1 周；</li>
+      <li><strong>公安能力平台</strong>：面向北京、陕西、浙江等省级平台项目，整合 LLM/VLM/ASR/TTS/Embedding、OCR、目标检测和智能检索能力，支撑公安执法办案流程升级。</li>
     </ul>
   </article>
   <article>
     <p><strong>上海扩博智能技术有限公司</strong>｜算法负责人（2022.02 – 2025.06）</p>
     <ul>
-      <li>围绕全球零售与风电两条业务线负责 AI 产品落地，覆盖产品方案、算法架构、数据流程、训练评估、推理部署、客户验收与持续运维；</li>
-      <li>现场 / 线上对接美国宝洁、中国宝洁、Thainamtip、西门子 Gamesa、GE Renewable、Vattenfall 等海内外客户，参与需求澄清、方案评审、试点验证、问题定位与交付复盘；</li>
+      <li>围绕全球零售与风电两条业务线负责行业智能化产品和软硬件系统落地，覆盖门店边缘采集、后装冰柜、无人机、自研无人小车、工业相机和智能执行系统；</li>
+      <li>多次深入零售门店、风场、叶片制造厂、无人机 / 机器人供应商等现场，参与需求澄清、方案演示、现场测试、问题定位与交付复盘；</li>
       <li>管理跨中美算法与交付协作团队，协调国内算法 / 数据 / 工程团队与海外销售、CS、实施团队，保障多时区项目推进、模型迭代和交付质量；</li>
-      <li>定义“视频原生 AI 采集”产品方案并被宝洁采纳为全球门店数据标准；主导风电智能巡检产品架构，覆盖 10万+ SKU、2000万+ 样本、10+ 国家 / 地区和单客户年收入 4000万+。</li>
+      <li>定义“视频原生 AI 采集”产品方案并被宝洁采纳为全球门店数据标准，支撑 10万+ SKU、2000万+ 样本、10+ 国家 / 地区和单客户年收入 4000万+。</li>
     </ul>
   </article>
   <article>
     <p><strong>网易 / 易现先进科技</strong>｜资深算法工程师（2018 – 2022）</p>
     <ul>
-      <li>参与并主导 AR + AI 引擎能力建设，覆盖 WebAR、移动端 AR、AR 眼镜、SLAM/6DoF、手势识别与端侧推理；</li>
-      <li>基于 Three.js、TensorFlow.js、模型量化、SIMD、多线程等技术，优化跨平台兼容性、加载速度与实时性能；</li>
-      <li>将 AR 能力用于数字营销、文旅、教育、工业等商业项目交付；</li>
-      <li>负责 20+ AR 项目算法与工程落地，积累底层算法、端侧优化与产品体验验证经验。</li>
+      <li><strong>AI + AR 软硬件系统</strong>：参与并主导自研 AR 眼镜、WebAR、移动端 AR 和眼镜端感知交互链路建设，覆盖 SLAM/6DoF、手势识别、端侧推理与 3D 渲染；</li>
+      <li><strong>端侧 AI 与性能优化</strong>：基于 Three.js、TensorFlow.js、模型量化、SIMD、多线程等技术，优化跨平台兼容性、加载速度与实时性能，在中低端设备实现稳定 30 FPS；</li>
+      <li><strong>商业化落地</strong>：将算法、渲染、端侧推理和 AR 眼镜体验结合，用于数字营销、文旅、教育、工业等 20+ 商业项目交付。</li>
     </ul>
   </article>
   <article>
@@ -590,114 +621,57 @@
       <h3>数字警察 AI 能力平台 / 智能体办案系统</h3>
       <small>事业部总监｜2025–</small>
       <div class="project-impact">
-        <strong>交付速度：</strong>2 个月完成智能体执法办案系统原型｜
+        <strong>系统范围：</strong>Agentic System + 警务通 / AI 眼镜 / 办案区终端｜
         <strong>组织效率：</strong>新增案由事件支持从 3 周降低为 1 周｜
         <strong>Token 成本：</strong>产研人月均控制在 $150
       </div>
     </header>
     <ul>
+      <li><strong>场景与终端协同</strong>：面向公安执法办案和办案区场景，负责智能体办案系统与终端设备协同规划；终端侧覆盖移动执法终端（警务通、AI 眼镜、智能头盔）和办案区终端（采集一体机、智能案卷柜、数警教育终端、多维智审桌）；</li>
       <li><strong>AI 组织建设</strong>：以 Gateway、Token 分析、Harness / Agent、缓存、Memory、上下文管理为底座，2 个月完成智能体执法办案系统原型，将新增案由事件支持周期从 3 周降低为 1 周，产研人月均 Token 成本控制在 $150 内；</li>
-      <li><strong>产品场景抽象</strong>：面向省级平台和一线办案流程，将固证、教育、笔录、图谱、审核、处罚抽象为可编排 Agent / Skill；</li>
-      <li><strong>系统控制能力</strong>：统一 Channel 接入、会话管理、路由分发、权限控制、观测审计、Tool Calling、Trace、Human-in-loop 与 Guardrail，保证系统可控、可审计、可迭代；</li>
-      <li><strong>多模态能力整合</strong>：整合 Qwen / DeepSeek、Qwen-VL、FunASR、Qwen-TTS、Embedding、OCR、目标检测、智能检索及 Redis、MongoDB、PostgreSQL、MinIO，兼顾效果、成本与交付稳定性。</li>
+      <li><strong>办案流程抽象</strong>：面向省级平台和一线办案流程，将固证、教育、笔录、图谱、审核、处罚抽象为可编排 Agent / Skill；</li>
+      <li><strong>工程治理与多模态能力</strong>：统一 Channel、权限、观测审计、Tool Calling、Trace、Human-in-loop 与 Guardrail，整合 LLM/VLM/ASR/TTS/OCR、数字人、表情识别与生命体征监测，兼顾效果、成本与交付稳定性。</li>
     </ul>
   </article>
   <article class="card">
     <header>
-      <h3>零售 AI 执行与数据洞察方案</h3>
+      <h3>零售门店边缘采集与 AI 执行系统</h3>
       <small>AI负责人｜2022–2025</small>
-      <div class="project-impact"><strong>商业结果：</strong>单客户年收入 4000万+、NDR 130%｜<strong>海外交付：</strong>现场 / 线上对接海内外客户、跨中美团队协作｜<strong>规模：</strong>10万+ SKU、2000万+ 样本、10+ 国家 / 地区</div>
+      <div class="project-impact"><strong>商业结果：</strong>单客户年收入 4000万+、NDR 130%｜<strong>采集设备：</strong>门店边缘采集 / 后装冰柜 / 移动端｜<strong>规模：</strong>10万+ SKU、2000万+ 样本</div>
     </header>
     <ul>
-      <li>负责全球零售 AI 项目的技术路线、数据体系、算法迭代、模型评估和交付质量，直接对接美国宝洁、中国宝洁、Thainamtip、可口可乐、强生等海内外客户；</li>
+      <li><strong>门店采集与识别</strong>：负责全球零售 AI 项目的技术路线、数据体系、算法迭代、模型评估和交付质量，直接对接美国宝洁、中国宝洁、Thainamtip、可口可乐、强生等海内外客户；</li>
       <li>管理跨中美算法协作，衔接国内算法 / 数据 / 工程团队与海外销售、CS、实施团队，处理多时区需求澄清、模型迭代、问题定位和交付复盘；</li>
-      <li>构建采集、多视角拼接、细粒度 SKU 识别、反作弊、KPI 生成、任务下发的端到端智能执行系统，支持 Web、移动端与边缘设备；</li>
+      <li><strong>采集到执行</strong>：构建门店采集、多视角拼接、细粒度 SKU 识别、反作弊、KPI 生成、任务下发的端到端智能执行系统，支持 Web、移动端、边缘采集设备与后装冰柜；</li>
       <li>方案被美国宝洁采纳为全球门店数据标准，复制至美国、加拿大、巴西、泰国、越南、柬埔寨、日本、欧洲等市场。</li>
     </ul>
   </article>
   <article class="card">
     <header>
-      <h3>风电智能巡检系统</h3>
+      <h3>风机叶片内外部智能巡检系统</h3>
       <small>AI负责人｜2022–2025</small>
-      <div class="project-impact"><strong>商业结果：</strong>替代 80% 人工巡检、单人单天 20 架次｜<strong>海外交付：</strong>西门子 Gamesa / GE Renewable / Vattenfall 验收｜<strong>质量：</strong>99%+ 召回、&lt;2% 误报</div>
+      <div class="project-impact"><strong>外部巡检：</strong>无人机 + 工业相机｜<strong>内部巡检：</strong>自研无人小车｜<strong>质量：</strong>99%+ 召回、&lt;2% 误报</div>
     </header>
     <ul>
-      <li>负责无人机 / 无人小车、工业相机、导航控制、数据采集、缺陷检测和人机复核的软硬一体系统设计、客户沟通与验收交付；</li>
-      <li>现场 / 线上对接西门子 Gamesa、GE Renewable、Vattenfall 等海外客户，参与需求确认、POC 验证、现场测试、远程问题定位和交付复盘；</li>
-      <li>构建“自主导航与控制 + 工业相机控制 + CV 缺陷检测 + 人机协同复核”的产品架构，用于自动化巡检流程；</li>
-      <li>自研非平面结构稀疏重建与拼接算法，处理叶片曲面几何畸变与图像对齐问题，实现高召回、低误报的缺陷识别，落地德国、澳大利亚、越南等市场。</li>
+      <li><strong>内外部巡检系统</strong>：无人机用于风机叶片外部巡检，自研无人小车用于叶片内部巡检，覆盖采集、导航、检测和人机复核流程；</li>
+      <li><strong>自研无人小车</strong>：参与整车级巡检系统建设，覆盖相机模组、导航控制、测距、爬坡、通信链路和叶片内部采集流程；</li>
+      <li><strong>现场验证</strong>：多次深入风场、叶片制造厂、无人机 / 机器人供应商现场，对接西门子 Gamesa、GE Renewable、Vattenfall 等客户，完成演示、测试、问题定位和交付复盘；</li>
+      <li><strong>算法工程落地</strong>：自研非平面结构稀疏重建与拼接算法，处理叶片曲面几何畸变与图像对齐问题，实现高召回、低误报的缺陷识别，落地德国、澳大利亚、越南等市场。</li>
     </ul>
   </article>
   <article class="card">
     <header>
-      <h3>全栈 AR 引擎与 WebAR 商业化</h3>
+      <h3>AR 眼镜 / WebAR 引擎与端侧 AI</h3>
       <small>资深算法工程师｜2018–2022</small>
-      <div class="project-impact"><strong>商业结果：</strong>20+ 商业项目落地、AR 眼镜项目交付｜<strong>技术难点：</strong>SLAM / 6DoF / 手势识别 / 端侧性能优化｜<strong>体验指标：</strong>中低端设备稳定 30 FPS</div>
+      <div class="project-impact"><strong>硬件入口：</strong>自研 AR 眼镜｜<strong>平台：</strong>WebAR / 移动端 AR / 眼镜端｜<strong>体验指标：</strong>中低端设备稳定 30 FPS</div>
     </header>
     <ul>
-      <li>参与并主导 WebAR、移动端 AR、AR 眼镜等平台能力建设，覆盖 3D 渲染、SLAM/6DoF、多模态感知、手势交互与内容分发；</li>
-      <li>通过模型量化、SIMD、多线程等方式优化端侧 AI 性能，在中低端设备实现稳定 30 FPS；</li>
-      <li>基于 Three.js + TensorFlow.js 开发轻量化 WebAR SDK，解决跨平台兼容性、加载速度和低延迟体验问题；</li>
-      <li>参与数字营销、文旅、工业等场景落地，积累从底层算法、端侧优化到产品体验验证的系统经验。</li>
+      <li><strong>软硬件链路</strong>：参与并主导自研 AR 眼镜、WebAR、移动端 AR 和眼镜端感知交互能力建设，覆盖 SLAM/6DoF、手势识别、端侧推理与 3D 渲染；</li>
+      <li><strong>端侧 AI 优化</strong>：基于 Three.js、TensorFlow.js、模型量化、SIMD、多线程等技术，优化跨平台兼容性、加载速度和实时性能；</li>
+      <li><strong>商业化落地</strong>：将算法、渲染、端侧推理和 AR 眼镜体验结合，用于数字营销、文旅、教育、工业等 20+ 商业项目交付。</li>
     </ul>
   </article>
 </div>
-</section>
-
-<section aria-labelledby="skills-heading" class="section">
-  <header>
-    <h2 id="skills-heading">核心能力与技术栈</h2>
-    <span class="section-subtitle">Core Competencies & Tech Stack</span>
-  </header>
-  <div class="skills-grid">
-    <div class="skill-category">
-      <h4>AI 工程与架构</h4>
-      <div class="pill-list">
-        <span>LLM Gateway</span>
-        <span>Multi-Agent System</span>
-        <span>Harness</span>
-        <span>RAG / Vector DB</span>
-        <span>Memory / Context Engineering</span>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <h4>行业 AI 产品</h4>
-      <div class="pill-list">
-        <span>公安执法办案</span>
-        <span>零售门店执行</span>
-        <span>风电智能巡检</span>
-        <span>软硬件一体化</span>
-        <span>私有化 / 国产化交付</span>
-        <span>国际化项目交付</span>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <h4>数据模型与多模态</h4>
-      <div class="pill-list">
-        <span>分类/检测/分割</span>
-        <span>Embedding</span>
-        <span>缺陷检测</span>
-        <span>图像拼接 / 三维重建</span>
-        <span>训练评估</span>
-        <span>端侧推理优化</span>
-      </div>
-    </div>
-
-    <div class="skill-category">
-      <h4>组织与复杂交付</h4>
-      <div class="pill-list">
-        <span>30+ 人团队管理</span>
-        <span>跨区域团队协作</span>
-        <span>产研测协作机制</span>
-        <span>客户需求澄清</span>
-        <span>方案评审与验收</span>
-        <span>研发效能治理</span>
-      </div>
-    </div>
-
-  </div>
 </section>
 
 <section aria-labelledby="honor-heading" class="section">
